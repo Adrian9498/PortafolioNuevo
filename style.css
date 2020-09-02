@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background: #282828;
+}
+.porTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 33px;
+    margin-left: 60px;
+    margin-bottom: 0;
+}
+.navigation{
+    display: flex;
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.navigation:hover{
+    width: 200px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation ul li:hover{
+    background: #4d4d4d;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width:100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width:60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fa{
+    font-size: 24px;
+}
+
+.navigation ul li a .tittle{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.master{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background : linear-gradient(to bottom right,#0070ba, #113a40);
+    z-index: -1;
+}
+.home{
+    display: flex;   
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.image-container{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: 60px;
+}
+
+.portafolio{
+    position: relative;
+    display: flex;
+    margin-top: 20px;   
+    margin-left: 150px;
+    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 10px;
+}
+.portafolio .card{
+    position: relative;
+    height: 250px;
+    background: white;
+    display: flex;
+    width: 40%;
+    margin: 20px 30px;
+    background: rgb(172, 171, 171);
+}
+.portafolio .card .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background : rgb(172, 171, 171);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.portafolio .card:hover .imgBx{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background : linear-gradient(to bottom right,#dd5869,#f5867e);
+}
+.portafolio .card .imgBx::before{
+   content: attr(data-text);
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   text-align: center;
+   font-size: 3em;
+   color: rgba(255, 255, 255, .05);
+   font-weight: 700;
+}
+.portafolio .card .imgBx img{
+    width: auto;
+    height: 50%;
+    transition: 0.5s ease-in-out;
+}
+.portafolio .card .content{
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.portafolio .card .content h3{
+    margin-bottom: 5px;
+    font-size:24px;
+}
+.portafolio .card .content a{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+}
+.letras{
+    margin-left: 70px;
+}
+.letras span{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+    padding:0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.formulario{
+    width: 600px;;
+}
+.card{
+    position: sticky;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+.card .front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform : rotateX(0deg);
+    transition: 0.5s;
+}
+.card:hover .front{
+    transform: rotateX(-180deg);
+}
+.card .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform : rotateX(180deg);
+    transition: 0.5s;
+}
+.card:hover .back{
+    transform: rotateX(0deg);
+}
+.card img{
+    height: 100%;
+    width: 100%;
+}
+
+.card .back .details{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.card .back .details h2{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: white;
+}
+.card .back .details h2 span{
+    color: #a7a7a7;
+    font-size: 16px;
+}
+
+.social-icons{
+    padding: 10px 0;
+}
+
+.social-icons a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    background: #262626;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.social-icons a .fab{
+    line-height: 36px;
+}
+
+.social-icons a:hover{
+    background: linear-gradient(to bottom right,#dd5869,#f5867e);
+}
+
+.description{
+    position: sticky;
+    width: 40vw;
+    height: 300px;
+    margin-left: 30px;
+    background-color: rgb(172, 171, 171);
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    padding: 25px;
+    box-shadow: 20px -16px rgba(156, 155, 155, 0.7)
+}
+.contacto{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 160px;
+    align-items: center;
+}
+.pdf-container{
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    align-items: center;
+}
+.contacto .pdf-container a{
+    text-decoration: none;
+    font-size: 250px;
+    color: #fff;
+}
+.contacto .pdf-container a:hover{
+    text-decoration: none;
+    font-size: 250px;
+    color:#f5867e; 
+}
+.contacto .pdf-container span{
+    font-size: 15px;
+    color: #fff;
+}
+.formu{
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    margin-left :120px;
+}
+.formu .entrada{
+    border: none;
+    width: 80%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background: rgb(172, 171, 171);
+    padding: 10px;
+    box-shadow: 10px -5px rgba(156, 155, 155, 0.7)
+}
+.formu .textplace{
+    margin-top: 20px;
+    width: 80%;
+    background: rgb(172, 171, 171);
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 10px -5px rgba(156, 155, 155, 0.7);
+    resize: none;
+}
+.formu .boton{
+    width: 30%;
+    position: relative;
+    left: 35%;
+    border-radius: 3px;
+    border-style: none;
+}
+@media screen and (max-width:1000px){
+    .navigation:hover{
+        width: 50vw;
+    }
+    .home{
+        display: flex;
+        flex-direction: column;   
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .letras span{
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin: 0;
+        padding:0;
+        font-size: 10px;
+        color: #fff;
+    }
+    .navigation{
+        display: flex;
+        position: fixed;
+        width: 60px;
+        height: 100%;
+        background: #000;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .portafolio{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 60px;
+    }
+    .portafolio .card{
+        width: 60%;
+    }
+    .about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        margin-left: 90px;
+        flex-flow: column;
+    }
+    .description{
+        width: 300px;
+        margin-top: 30px;
+        margin-left: 0;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="navigation">
+          <ul>
+              <li>
+                  <a href="#home">
+                      <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                      <span class="tittle">Home</span>
+                  </a>
+              </li>
+              <li>
+                <a href="#porTitle">
+                    <span class="icon"><i class="fas fa-briefcase"></i></span>
+                    <span class="tittle">Portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#aboTitle">
+                    <span class="icon"><i class="fa fa-portrait"></i></span>
+                    <span class="tittle">About me</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contacto">
+                    <span class="icon"><i class="fas fa-id-card"></i></span>
+                    <span class="tittle">Contact Me</span>
+                </a>
+            </li>
+          </ul>  
+        </div>
+        <div class="master">
+        </div>
+        <div class="home" id="home">
+            <div class="letras">
+                <span >Web Developer: Adrian Gutierrez</span>
+                <br>
+                <br>
+                <span>Backend and Frontend Expert</span>
+            </div>
+            <div class="image-container"><img src="Killjoyz.gif" alt=""></div>
+        </div>
+        <div class="porTitle" id="porTitle">Portfolio Projects</div>
+        <div class="portafolio" id="portafolio">
+            <div class="card">
+                <div class="imgBx" data-text="BugTracker">
+                    <img src="wasp.png" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>BugTracker</h3>
+                        <p>Work in progress</p>
+                        <a href="">GitHub</a>
+                        <a href="">Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="JS PlayGround">
+                    <img src="javascript.png" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>Js PlayGround</h3>
+                        <p>Work in progress</p>
+                        <a href="">GitHub</a>
+                        <a href="">Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="PHP CRUD">
+                    <img src="php.png" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>PHP Crud</h3>
+                        <p>Work in progress</p>
+                        <a href="">GitHub</a>
+                        <a href="">Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx" data-text="Spotify Clone">
+                    <img src="spotify-sketch.png" alt="">
+                </div>
+                <div class="content">
+                    <div>
+                        <h3>Spotify Clone</h3>
+                        <p>Work in progress</p>
+                        <a href="">GitHub</a>
+                        <a href="">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="porTitle" id="aboTitle">About Me</div>
+        <div class="about" id="about">
+            <div class="card">
+                <div class="front"><img src="yo.jpg" alt=""></div>
+                <div class="back">
+                    <div class="details">
+                        <h2>Adrian Gutierrez<br><span>Web Deverloper</span></h2>
+                        <div class="social-icons">
+                            <a href=""><i class="fab fa-facebook-f"></i></i></a>
+                            <a href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                            <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <h2> Hey! <br> <br> My name is Adrian, I'm a web developer, a videogame lover and a passionate math student. 
+                    <br>
+                    <br> I'm the developer that you're looking for.
+                </h2>
+                <br>  ← Hover the card
+            </div>
+        </div>
+        <div class="porTitle" id="conTitle">Contact Me</div>
+        <div class="contacto" id="contacto">
+            <div class="pdf-container">
+                <span>Click to download my CV</span>
+                <a href="curr.pdf" download><i class="far fa-file-pdf"></i></a> <br>
+            </div>
+            <div class="formu">
+                <form action="" method="POST" onsubmit="return false;" class="formulario">
+                    <input type="text" id="name" class="entrada" placeholder="Name"><br>
+                    <input type="email" id="email" class="entrada" placeholder="Mail"><br>
+                    <input type="tel" id="tel" class="entrada" placeholder="Phone"><br>
+                    <textarea id="message" placeholder="Enter your message" class="textplace" cols="30" rows="10"></textarea><br>
+                    <script>
+                        enviar = function(){
+                            var names = document.getElementById('name').value;
+                            var email = document.getElementById('email').value;
+                            var tel = document.getElementById('tel').value;
+                            var message = document.getElementById('message').value;
+                            Email.send({
+                            SecureToken : "99b1959e-e7c9-49a8-9607-0572852202ac",
+                            To : 'shrifelincreible@gmail.com',
+                            From : "shrifelincreible@gmail.com",
+                            Subject : names+' '+email+' '+tel,
+                            Body : message
+                            }).then(
+                            );
+                            alert('Tu Correo a sido Enviado')
+                        }
+                    </script>
+                <input type="submit" class="boton" onclick="enviar()">
+                </form>
+                
+            </div>
+        </div>
+        <div style=" margin-top: 30px;"></div>
+        <span hidden>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    </body>
+</html>
